@@ -1,0 +1,13 @@
+// ==|== media queries ========================================================
+// ============================================================================
+
+// @media only screen and (min-width: 768px) {
+// }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // IE10 & IE11
+
+	html.ie9 div.bg_front {
+		display: none;
+	}
+
+}

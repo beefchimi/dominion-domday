@@ -1,0 +1,167 @@
+// ==|== primary styles =======================================================
+// Author: Curtis Dulmage
+// ============================================================================
+
+// Foundation
+// ----------------------------------------------------------------------------
+html {
+	font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+}
+::selection {
+	background-color: $hsl_L0;
+}
+
+// Transitions & Animations
+// ----------------------------------------------------------------------------
+a {
+	transition: all 0.3s ease-in-out;
+}
+svg {
+	transition: fill 0.3s ease-in-out;
+}
+// --- Animations --- \\
+@keyframes animSVG {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes anim360 {
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes animFadeIn {
+	to {
+		opacity: 1;
+	}
+}
+@keyframes animShow {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes animHide {
+	0%   { opacity: 1; left: 0; }
+	99%  { opacity: 0; left: 0; }
+	100% { opacity: 0; left: -200%; }
+}
+@keyframes animShake {
+	0%, 100% {
+		transform: translate3d(0,0,0);
+	}
+	10%, 30%, 50%, 70%, 90% {
+		transform: translate3d(-1rem,0,0);
+	}
+	20%, 40%, 60%, 80% {
+		transform: translate3d(1rem,0,0);
+	}
+}
+.animate_shake {
+	animation: animShake 0.7s ease-in-out both;
+}
+// --- FOUT --- \\
+html:not(.ie9) main,
+html:not(.ie9) header,
+html:not(.ie9) footer {
+	opacity: 0; // begin by setting opacity to 0 (if not IE9)
+	animation: animShow 0.6s ease-in-out 0.2s forwards;
+}
+
+// General Styles
+// ----------------------------------------------------------------------------
+body {
+	background-color: $hsl_cream;
+}
+// --- SVG --- \\
+#svgInject {
+	display: none;
+	visibility: hidden;
+}
+.wrap_svg {
+	display: block;
+}
+.wrap_svg svg {
+	width: 100%;
+	height: 100%;
+}
+svg.svg_inline {
+	display: inline; // chrome does not respect the [viewBox] selector
+}
+// --- Containers --- \\
+[data-container] {
+	margin-left: auto;
+	margin-right: auto;
+}
+[data-container="width_1280"] {
+	max-width: 128rem;
+}
+
+// Main
+// ----------------------------------------------------------------------------
+main {
+	position: relative;
+	background: url('../img/bg_behind.png') no-repeat;
+	background-size: contain;
+}
+div.bg_front {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	pointer-events: none;
+}
+html.ie9 div.bg_front {
+	display: none;
+	visibility: hidden;
+}
+// --- Tickets --- \\
+section.tickets {
+	position: relative;
+}
+section.tickets a.wrap_svg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	max-width: 50.6rem;
+	max-height: 11rem;
+}
+section.tickets a.wrap_svg svg {
+	fill: $hsl_red;
+}
+section.tickets a.wrap_svg:hover svg {
+	fill: $hsl_blue;
+}
+section.tickets a.wrap_svg:active svg {
+	fill: darken($hsl_blue, 10%);
+}
+
+// Error
+// ----------------------------------------------------------------------------
+body.error_404 main {
+	display: table;
+	table-layout: fixed;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: none;
+}
+section.error {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+section.error h1 {
+	margin-bottom: 2rem;
+	font-size: 4.2rem;
+	text-transform: uppercase;
+	color: $hsl_red;
+}
+section.error h2 {
+	font-size: 2.8rem;
+	color: $hsl_blue;
+}

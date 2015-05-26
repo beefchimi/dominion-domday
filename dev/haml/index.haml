@@ -1,0 +1,42 @@
+!!!
+/[if IE 9] <html class="ie9" lang="en">
+<!--[if gt IE 9]><!-->
+%html{:lang => "en"}<>
+	<!--<![endif]-->
+
+	= Haml::Engine.new(File.read("dev/haml/partials/_doc_head.haml")).render
+
+	%body
+
+		#svgInject
+			/ inject:svg
+			/ endinject
+
+		%main{:role => "main", "data-container" => "width_1280"}
+
+			= Haml::Engine.new(File.read("dev/haml/partials/_html_header.haml")).render
+
+			%section.content-1
+				%img{:src => "assets/img/content-1.png", :alt => ""}
+
+			%section.tickets
+				%img{:src => "assets/img/placeholder.png", :alt => ""}
+				%a.wrap_svg{:href => "https://www.eventbrite.ca/e/dominion-day-tickets-16997336491", :title => "Buy Tickets"}
+					%svg.button_tickets{:viewBox => "0 0 506 110"}
+						%use{"xlink:href" => "#button_tickets"}
+
+			%section.content-2
+				%img{:src => "assets/img/content-2.png", :alt => ""}
+
+			%section.tickets
+				%img{:src => "assets/img/placeholder.png", :alt => ""}
+				%a.wrap_svg{:href => "https://www.eventbrite.ca/e/dominion-day-tickets-16997336491", :title => "Buy Tickets"}
+					%svg.button_tickets{:viewBox => "0 0 506 110"}
+						%use{"xlink:href" => "#button_tickets"}
+
+			= Haml::Engine.new(File.read("dev/haml/partials/_html_footer.haml")).render
+
+			.bg_front
+				%img{:src => "assets/img/bg_front.png", :alt => ""}
+
+		= Haml::Engine.new(File.read("dev/haml/partials/_doc_scripts.haml")).render
