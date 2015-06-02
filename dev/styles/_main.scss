@@ -69,7 +69,8 @@ html:not(.ie9) footer {
 // General Styles
 // ----------------------------------------------------------------------------
 body {
-	background-color: $hsl_cream;
+	// background-color: $hsl_cream;
+	background: $hsl_cream url('../img/bg_pattern.png');
 }
 // --- SVG --- \\
 #svgInject {
