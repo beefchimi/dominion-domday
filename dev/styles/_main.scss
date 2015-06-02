@@ -117,11 +117,13 @@ html.ie9 div.bg_front {
 	display: none;
 	visibility: hidden;
 }
-// --- Tickets --- \\
-section.tickets {
+// --- Tickets & Volunteers --- \\
+section.tickets,
+section.volunteer {
 	position: relative;
 }
-section.tickets a.wrap_svg {
+a.wrap_ticket,
+a.wrap_volunteer {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -131,13 +133,26 @@ section.tickets a.wrap_svg {
 	max-width: 50.6rem;
 	max-height: 11rem;
 }
-section.tickets a.wrap_svg svg {
+a.wrap_ticket {
+	width: 40%;
+	max-width: 50.6rem;
+	max-height: 11rem;
+}
+a.wrap_volunteer {
+	width: 36%;
+	max-width: 50.8rem;
+	max-height: 10.4rem;
+}
+a.wrap_ticket svg,
+a.wrap_volunteer svg {
 	fill: $hsl_red;
 }
-section.tickets a.wrap_svg:hover svg {
+a.wrap_ticket:hover svg,
+a.wrap_volunteer:hover svg {
 	fill: $hsl_blue;
 }
-section.tickets a.wrap_svg:active svg {
+a.wrap_ticket:active svg,
+a.wrap_volunteer:active svg {
 	fill: darken($hsl_blue, 10%);
 }
 

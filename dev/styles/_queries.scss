@@ -1,8 +1,14 @@
 // ==|== media queries ========================================================
 // ============================================================================
 
-// @media only screen and (min-width: 768px) {
-// }
+@media only screen and (min-width: 768px) {
+
+	a.wrap_ticket,
+	a.wrap_volunteer {
+		width: auto;
+	}
+
+}
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // IE10 & IE11
 

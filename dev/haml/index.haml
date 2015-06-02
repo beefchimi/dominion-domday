@@ -20,8 +20,8 @@
 				%img{:src => "assets/img/content-1.png", :alt => ""}
 
 			%section.tickets
-				%img{:src => "assets/img/placeholder.png", :alt => ""}
-				%a.wrap_svg{:href => "https://www.eventbrite.ca/e/dominion-day-tickets-16997336491", :title => "Buy Tickets"}
+				%img{:src => "assets/img/placeholder-1.png", :alt => ""}
+				%a.wrap_svg.wrap_ticket{:href => "https://www.eventbrite.ca/e/dominion-day-tickets-16997336491", :title => "Buy Tickets"}
 					%svg.button_tickets{:viewBox => "0 0 506 110"}
 						%use{"xlink:href" => "#button_tickets"}
 
@@ -29,10 +29,16 @@
 				%img{:src => "assets/img/content-2.png", :alt => ""}
 
 			%section.tickets
-				%img{:src => "assets/img/placeholder.png", :alt => ""}
-				%a.wrap_svg{:href => "https://www.eventbrite.ca/e/dominion-day-tickets-16997336491", :title => "Buy Tickets"}
+				%img{:src => "assets/img/placeholder-1.png", :alt => ""}
+				%a.wrap_svg.wrap_ticket{:href => "https://www.eventbrite.ca/e/dominion-day-tickets-16997336491", :title => "Buy Tickets"}
 					%svg.button_tickets{:viewBox => "0 0 506 110"}
 						%use{"xlink:href" => "#button_tickets"}
+
+			%section.volunteer
+				%img{:src => "assets/img/placeholder-2.png", :alt => ""}
+				%a.wrap_svg.wrap_volunteer{:href => "mailto:margaux@dominioncity.ca", :title => "Volunteer With Us!"}
+					%svg.button_volunteer{:viewBox => "0 0 508 104"}
+						%use{"xlink:href" => "#button_volunteer"}
 
 			= Haml::Engine.new(File.read("dev/haml/partials/_html_footer.haml")).render
 
